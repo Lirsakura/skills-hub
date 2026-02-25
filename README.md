@@ -35,7 +35,7 @@ cp skill-hub/skills/advisor-agent/advisor-agent.md ~/.config/opencode/agents/
 cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 
 # 3. 在 OpenCode 中直接使用
-# "帮我查一下复旦大学的杨珉教授"
+# "帮我查一下xx大学xx学院的xx教授"
 ```
 
 ### 📦 可用 Skills
