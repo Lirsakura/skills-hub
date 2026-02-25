@@ -105,7 +105,6 @@ Advisor Agent 帮你做一份完整的「导师尽职调查报告」：
 skill-hub/
 ├── README.md
 ├── CONTRIBUTING.md            # 贡献指南
-├── agents/
 ├── skills/
 │   ├── advisor-agent/         # 导师调查
 │   │   ├── advisor-agent.md   # 入口文件
