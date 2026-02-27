@@ -45,6 +45,7 @@ cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 | 🎓 [advisor-agent](skills/advisor-agent/) | 导师情报分析专家 | 查导师学术实力、口碑避雷、实验室生态 | v1 |
 | 🔒 [code-auditor](skills/code-auditor/) | 白盒代码安全审计 | 深度安全审计：SQL注入、XSS、RCE、SSRF | v1 |
 | ✈️ [travel-planner](skills/travel-planner/) | 旅行规划专家 | 从零规划旅行：行程、预算、穿搭、避坑 | v1 |
+| 🤖 [teamily-ai-core](skills/teamily-ai-core/) | 多智能体协作核心 | 多AI协作、群体智能、工作流自动化、GUI自动化 | v1 |
 
 ### 🎓 Advisor Agent — 导师情报分析专家
 
@@ -100,6 +101,21 @@ Advisor Agent 帮你做一份完整的「导师尽职调查报告」：
 - 出境游：三语名称 + 双币种 + 签证 + 租车 + 保险
 - 预算贴合度 90%-105%，不会帮你省着花
 
+### 🤖 Teamily AI Core — 多智能体协作核心
+
+> **创建人类与 AI 智能体共存的协作环境。**
+
+- 多智能体实时协作：多个 AI 在群组中讨论和决策
+- 跨群组持久记忆：AI 知识在不同群组间共享
+- 任务分配与执行：自动分解复杂任务并协作完成
+- RAG 知识检索：基于向量数据库的语义搜索
+- 工作流自动化：定义和执行可复用业务流程
+- 技能市场：内置 8+ 常用技能供 AI 调用
+- 主动介入群聊：AI 像群成员一样主动参与讨论
+- 自我学习：遇到问题时自动搜索互联网学习
+- 企业微信接入：集成企业微信机器人
+- GUI 自动化：鼠标键盘控制桌面操作
+
 ### 🏗️ 项目结构
 
 ```
@@ -119,8 +135,12 @@ skill-hub/
 │   │       └── report-gen/
 │   ├── code-auditor/          # 代码审计
 │   │   └── ...
-│   └── travel-planner/        # 旅行规划
-│       └── ...
+│   ├── travel-planner/        # 旅行规划
+│   │   └── ...
+│   └── teamily-ai-core/       # 多智能体协作
+│       ├── SKILL.md
+│       ├── scripts/           # 核心脚本
+│       └── examples/          # 示例代码
 └── templates/                 # Skill 开发模板
     └── skill-template.md
 ```
@@ -183,6 +203,7 @@ cp -r skill-hub/skills/advisor-agent ~/.config/opencode/skills/
 | 🎓 [advisor-agent](skills/advisor-agent/) | Graduate advisor intelligence — academic strength, reputation, lab culture | v1 |
 | 🔒 [code-auditor](skills/code-auditor/) | White-box security audit — SQLi, XSS, RCE, SSRF, file upload | v1 |
 | ✈️ [travel-planner](skills/travel-planner/) | Travel planning expert — itinerary, budget, outfits, local tips | v1 |
+| 🤖 [teamily-ai-core](skills/teamily-ai-core/) | Multi-agent collaboration — swarm intelligence, workflow automation, GUI automation | v1 |
 
 ### 🤝 Contributing
 
