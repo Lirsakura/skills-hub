@@ -36,8 +36,10 @@ AI 智能体的记忆可以在不同群组之间共享，形成持续学习的�
 ### 5. 工作流自动化
 定义可复用的工作流程，自动执行多步骤任务。
 
-### 6. 技能市场
-内置 8+ 个常用技能（网页采集、数据分析、文档生成等），智能体可根据任务自动调用。
+### 6. 技能市场 (内置 + ClawHub)
+- 内置 8+ 个常用技能（网页采集、数据分析、文档生成等）
+- **ClawHub 集成**：接入 OpenClaw 官方技能市场 (3000+ 技能)
+- 智能体可根据任务自动调用
 
 ### 7. 主动介入群聊
 AI 可以像群成员一样主动参与讨论，不只是响应用户指令。
@@ -110,6 +112,27 @@ result = market.execute_skill(
     skill_name="web_scraper",
     params={"url": "https://example.com"}
 )
+```
+
+### 使用 ClawHub 技能市场
+
+```python
+from scripts.skill_market import SkillMarket
+
+market = SkillMarket()
+
+# 搜索 ClawHub 技能（如 email、github、slack 等）
+skills = market.search_clawhub("email")
+for s in skills:
+    print(f"{s.name}: {s.description} (⭐ {s.stars})")
+
+# 安装 ClawHub 技能
+market.install_clawhub_skill("gmail")
+market.install_clawhub_skill("github")
+
+# 列出已安装的 ClawHub 技能
+installed = market.list_clawhub_skills()
+print(f"已安装: {installed}")
 ```
 
 ### 自我学习

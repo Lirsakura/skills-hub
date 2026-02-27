@@ -1,15 +1,27 @@
 """
 Teamily AI Core - 技能市场
 智能技能执行系统
+
+支持两种技能来源：
+1. 内置技能 - Teamily AI Core 自带的技能
+2. ClawHub 技能 - OpenClaw 官方技能市场 (3000+ 技能)
 """
 
 import json
 import time
 import importlib
 import subprocess
+import os
 from typing import Dict, List, Optional, Any, Callable
 from dataclasses import dataclass, field
 from enum import Enum
+
+# ClawHub 客户端
+try:
+    from .clawhub_client import ClawHubMarket, ClawHubSkill
+    CLAWHUB_AVAILABLE = True
+except ImportError:
+    CLAWHUB_AVAILABLE = False
 
 
 class SkillCategory(Enum):
@@ -74,6 +86,7 @@ class SkillMarket:
     - 搜索技能
     - 执行技能
     - 技能编排
+    - ClawHub 集成 (3000+ 外部技能)
     """
     
     def __init__(self):
@@ -81,8 +94,61 @@ class SkillMarket:
         self.executions: List[SkillExecution] = []
         self.categories = {c.value: [] for c in SkillCategory}
         
+        # ClawHub 集成
+        self.clawhub = None
+        if CLAWHUB_AVAILABLE:
+            try:
+                self.clawhub = ClawHubMarket()
+            except Exception as e:
+                print(f"ClawHub 初始化失败: {e}")
+        
         # 初始化内置技能
         self._register_builtin_skills()
+    
+    def search_clawhub(self, query: str, category: str = None) -> List[ClawHubSkill]:
+        """
+        搜索 ClawHub 技能市场
+        
+        Args:
+            query: 搜索关键词
+            category: 可选，按分类筛选
+            
+        Returns:
+            ClawHub 技能列表
+        """
+        if not self.clawhub:
+            print("ClawHub 不可用")
+            return []
+        
+        return self.clawhub.search(query, category)
+    
+    def install_clawhub_skill(self, skill_name: str) -> bool:
+        """
+        从 ClawHub 安装技能
+        
+        Args:
+            skill_name: 技能名称
+            
+        Returns:
+            是否安装成功
+        """
+        if not self.clawhub:
+            print("ClawHub 不可用")
+            return False
+        
+        return self.clawhub.install(skill_name)
+    
+    def list_clawhub_skills(self) -> List[str]:
+        """
+        列出从 ClawHub 安装的技能
+        
+        Returns:
+            已安装技能列表
+        """
+        if not self.clawhub:
+            return []
+        
+        return self.clawhub.list_installed()
     
     def _register_builtin_skills(self):
         """注册内置技能"""
