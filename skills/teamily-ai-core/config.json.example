@@ -1,0 +1,9 @@
+{
+  "wecom_enabled": true,
+  "auto_reply": true,
+  "listen_groups": [],
+  "model": "nvidia",
+  "nvidia_api_key": "",
+  "openai_api_key": "",
+  "anthropic_api_key": ""
+}
