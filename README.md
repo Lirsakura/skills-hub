@@ -37,7 +37,7 @@ Skill  = 一套完整的 SOP 手册  →  流程 + 策略 + 质量红线 + 错�
 **复制粘贴即装。** 零依赖，零配置。当前适配 [OpenCode](https://opencode.ai)，本质是 Markdown，任何支持 system prompt 的平台都能用。
 
 ```bash
-git clone https://github.com/你的用户名/skill-hub.git
+git clone https://github.com/Lirsakura/skill-hub.git
 cp skill-hub/agents/advisor-agent.md  ~/.config/opencode/agents/
 cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 # 完事。打开 OpenCode 说人话就行。
