@@ -1,209 +1,326 @@
- <div align="center">
+<div align="center">
 
-# 🧠 Skill Hub
+```
+   ███████╗██╗  ██╗██╗██╗     ██╗         ██╗  ██╗██╗   ██╗██████╗
+   ██╔════╝██║ ██╔╝██║██║     ██║         ██║  ██║██║   ██║██╔══██╗
+   ███████╗█████╔╝ ██║██║     ██║         ███████║██║   ██║██████╔╝
+   ╚════██║██╔═██╗ ██║██║     ██║         ██╔══██║██║   ██║██╔══██╗
+   ███████║██║  ██╗██║███████╗███████╗    ██║  ██║╚██████╔╝██████╔╝
+   ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝
+```
 
-**开源 AI Agent Skill 社区 — 让 AI 真正会做事**
+**Plug-and-play skill packs for AI Agents.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Platform](https://img.shields.io/badge/Platform-OpenCode-purple.svg)](https://opencode.ai)
+**给 AI 装技能包。不调 prompt，直接上专家。**
 
-[English](#english) · [中文](#中文)
+<br/>
+
+[![MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![PRs](https://img.shields.io/badge/PRs-welcome-FF6B6B?style=flat-square)](CONTRIBUTING.md)
+[![Idea?](https://img.shields.io/badge/💡_Idea%3F-Open_Issue-FFD93D?style=flat-square)](https://github.com/你的用户名/skill-hub/issues/new)
+
+**[中文](#中文)** · **[English](#english)**
 
 </div>
 
 ---
 
-## 中文
+<a name="中文"></a>
 
-### 🤔 这是什么？
+## 什么是 Skill？
 
-**Skill Hub** 是一个开源的 AI Agent Skill 仓库。
+```
+Prompt = 一句话指令          →  "帮我分析这份数据"  →  AI 随便聊两句
+Skill  = 一套完整的 SOP 手册  →  流程 + 策略 + 质量红线 + 错误兜底 + 结构化输出
+```
 
-每个 Skill 是一份精心设计的 Markdown 指令文件，能让 AI 像专家一样完成特定任务——不是简单的 prompt，而是包含完整工作流、质量标准和错误处理的**专业级 Agent 方案**。
-
-> 🎯 当前支持 [OpenCode](https://opencode.ai)，后续将扩展到 Claude Code、Cursor 等更多平台。
-
-### ⚡ 30 秒上手
+**复制粘贴即装。** 零依赖，零配置。当前适配 [OpenCode](https://opencode.ai)，本质是 Markdown，任何支持 system prompt 的平台都能用。
 
 ```bash
-# 1. 克隆仓库
 git clone https://github.com/你的用户名/skill-hub.git
-
-# 2. 复制入口文件到 agents 目录，子 skill 到 skills 目录
-cp skill-hub/skills/advisor-agent/advisor-agent.md ~/.config/opencode/agents/
+cp skill-hub/agents/advisor-agent.md  ~/.config/opencode/agents/
 cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
-
-# 3. 在 OpenCode 中直接使用
-# "帮我查一下xx大学xx学院的xx教授"
+# 完事。打开 OpenCode 说人话就行。
 ```
-
-### 📦 可用 Skills
-
-| Skill | 描述 | 适用场景 | 版本 |
-|-------|------|----------|------|
-| 🎓 [advisor-agent](skills/advisor-agent/) | 导师情报分析专家 | 查导师学术实力、口碑避雷、实验室生态 | v1 |
-| 🔒 [code-auditor](skills/code-auditor/) | 白盒代码安全审计 | 深度安全审计：SQL注入、XSS、RCE、SSRF | v1 |
-| ✈️ [travel-planner](skills/travel-planner/) | 旅行规划专家 | 从零规划旅行：行程、预算、穿搭、避坑 | v1 |
-
-### 🎓 Advisor Agent — 导师情报分析专家
-
-> **选错导师毁三年，这份报告帮你避坑。**
-
-你是不是也有过这样的困惑：
-- 想报某个导师的研究生，但不知道 TA 人怎么样？
-- 网上信息散落在知乎、小红书、Reddit 各处，搜到累死也拼不出全貌？
-- 听说有的导师很 push、不让毕业，但不知道是真是假？
-
-Advisor Agent 帮你做一份完整的「导师尽职调查报告」：
-
-**🔍 覆盖 11 个信息渠道**
-- 研控 · PI Review · 知乎 · 小红书 · 一亩三分地 · RateMyProfessors · Reddit · GradCafe · PubPeer · 新闻媒体 · 官方通报
-
-**📊 结构化输出**
-- 学术实力评级（⭐1-5） + Top 5 论文
-- 口碑避雷（🔴红旗 🟡黄旗 🟢绿旗）+ 可信度分级
-- 实验室生态（学生去向、毕业年限、指导风格）
-- 最终综合评估 + 行动建议
-
-**🎯 多种使用模式**
-```
-"帮我查一下 MIT 的 XXX 教授"          → 完整调查报告
-"XXX 导师有没有什么负面消息"          → 快速避雷
-"对比 A 教授和 B 教授"                → 对比报告
-"下周要面试 XXX 教授，帮我准备"       → 面试准备
-```
-
-**📁 提供三个版本**
-
-| 版本 | 体量 | 适合 |
-|------|------|------|
-| 完整版（多子skill） | ~49K chars | Claude Opus/Sonnet 等大模型 |
-| 精简版（多子skill） | ~11K chars | 中等参数模型 |
-| 单文件版 | ~4K chars | 30B 以下本地模型 |
-
-### 🔒 Code Auditor — 白盒安全审计专家
-
-> **像人类安全研究员一样审计代码，不是正则匹配。**
-
-- 6 阶段审计流程：代码接入 → 全量理解 → 深度分析 → 对抗验证 → 报告 → 协作
-- 聚焦 5 大高危漏洞：SQLi / XSS / RCE / SSRF / 文件上传
-- 跨文件数据流追踪 + 攻防对抗验证
-- 输出可执行 PoC 的专业审计报告
-
-### ✈️ Travel Planner — 旅行规划专家
-
-> **旅游小白也能规划完美旅行。**
-
-- 6 种场景：明确需求 / 小白探索 / 拍照穿搭 / MBTI定制 / 出境旅游 / 地图生成
-- 具体到门牌号的酒店推荐 + 差评信息
-- 出境游：三语名称 + 双币种 + 签证 + 租车 + 保险
-- 预算贴合度 90%-105%，不会帮你省着花
-
-### 🏗️ 项目结构
-
-```
-skill-hub/
-├── README.md
-├── CONTRIBUTING.md            # 贡献指南
-├── skills/
-│   ├── advisor-agent/         # 导师调查
-│   │   ├── advisor-agent.md   # 入口文件（放到 ~/.config/opencode/agents/）
-│   │   ├── SKILL.md           # 主调度（放到 ~/.config/opencode/skills/advisor-agent/
-│   │   └── skills/            # 子 skill
-│   │       ├── scholar-search/
-│   │       ├── professor-profile/
-│   │       ├── reputation-check/
-│   │       ├── paper-analysis/
-│   │       ├── lab-intel/
-│   │       └── report-gen/
-│   ├── code-auditor/          # 代码审计
-│   │   └── ...
-│   └── travel-planner/        # 旅行规划
-│       └── ...
-└── templates/                 # Skill 开发模板
-    └── skill-template.md
-```
-
-### 🤝 贡献
-
-我们欢迎所有形式的贡献！
-
-**提交新 Skill**：
-1. Fork 本仓库
-2. 参考 `templates/skill-template.md` 创建你的 Skill
-3. 放到 `skills/你的skill名/` 目录下
-4. 提交 PR，附上简单的使用说明和效果示例
-
-**改进现有 Skill**：
-- 发现 bug？搜索策略不够好？报告格式可以优化？直接提 Issue 或 PR
-
-**Skill 灵感（欢迎认领）**：
-- 📝 论文阅读助手 — 深度解析学术论文
-- 📊 数据分析师 — 自动 EDA + 可视化 + 报告
-- 🏠 租房调查员 — 房源信息 + 周边 + 避坑
-- 💼 简历优化师 — 针对 JD 优化简历
-- 🍳 菜谱规划师 — 根据冰箱库存推荐菜谱
-- 🏋️ 健身教练 — 个性化训练计划
-- 📰 新闻摘要员 — 每日新闻多源聚合
-
-### 📄 License
-
-MIT License — 随便用，记得给个 ⭐
 
 ---
 
-## English
+## Skill 目录
 
-### 🤔 What is this?
+> `✅ 可用` `🚧 开发中` `💡 待认领 — 欢迎 PR 或 Issue 投票 👍`
 
-**Skill Hub** is an open-source AI Agent Skill repository.
+### 🔍 `research/` — 调研与情报
 
-Each Skill is a carefully crafted Markdown instruction file that turns AI into a domain expert — not just a simple prompt, but a **production-grade Agent blueprint** with complete workflows, quality standards, and error handling.
+| 状态 | Skill | 简介 | 亮点 |
+|:---:|-------|------|------|
+| ✅ | **[advisor-agent](skills/advisor-agent/)** | 导师情报分析 | 11 源扫描 · 🔴🟡🟢 风险标记 · 对比/面试模式 |
+| 💡 | paper-reader | 学术论文深度拆解 | 核心贡献 · 方法论 · 局限性 · 可复现性评估 |
+| 💡 | market-analyst | 行业/产品调研 | 竞品分析 · 市场规模 · 趋势预测 |
 
-> 🎯 Currently supports [OpenCode](https://opencode.ai). Expanding to Claude Code, Cursor, and more platforms soon.
+### 🛡️ `security/` — 安全攻防
 
-### ⚡ Quick Start
+| 状态 | Skill | 简介 | 亮点 |
+|:---:|-------|------|------|
+| ✅ | **[code-auditor](skills/code-auditor/)** | 白盒代码安全审计 | 6 阶段流程 · 跨文件追踪 · 可执行 PoC |
+| 💡 | vuln-scanner | 漏洞扫描与验证 | 自动化扫描 · CVE 匹配 · 修复建议 |
 
-```bash
-# 1. Clone
-git clone https://github.com/你的用户名/skill-hub.git
+### ✈️ `lifestyle/` — 生活助手
 
-# 2. Copy the skill you want
-cp -r skill-hub/skills/advisor-agent ~/.config/opencode/skills/
+| 状态 | Skill | 简介 | 亮点 |
+|:---:|-------|------|------|
+| ✅ | **[travel-agent](skills/travel-agent/)** | AI 旅行规划师 | 6 种模式 · 门牌号精度 · 出境三语 · MBTI 路线 |
+| 💡 | meal-planner | 冰箱有什么→做什么菜 | 食材匹配 · 营养均衡 · 难度分级 |
+| 💡 | fitness-coach | 个性化训练计划 | 目标导向 · 器材适配 · 渐进超负荷 |
 
-# 3. Use it in OpenCode
-# "Look up Professor XXX at MIT for me"
+### 🔧 `devtools/` — 开发工具
+
+| 状态 | Skill | 简介 | 亮点 |
+|:---:|-------|------|------|
+| 💡 | env-setup | GitHub 项目一键配环境 | conda/venv/docker · GPU 自检 · 镜像回退 |
+| 💡 | data-analyst | 自动 EDA + 可视化 | 数据画像 · 异常检测 · 洞察报告 |
+
+### 💼 `career/` — 求职与学术
+
+| 状态 | Skill | 简介 | 亮点 |
+|:---:|-------|------|------|
+| 💡 | resume-tailor | 根据 JD 定制简历 | 逐条匹配 · ATS 友好 · 量化建议 |
+| 💡 | mock-interview | 模拟技术面试 | 实时追问 · 评分反馈 · 知识点定位 |
+
+### 📰 `information/` — 信息聚合
+
+| 状态 | Skill | 简介 | 亮点 |
+|:---:|-------|------|------|
+| 💡 | news-digest | 每日多源新闻聚合 | 去重 · 摘要 · 观点对比 · 趋势追踪 |
+| 💡 | apartment-hunter | 租房情报调查 | 房源分析 · 周边设施 · 差评避坑 |
+
+---
+
+## 已上线 Skill 速览
+
+<details>
+<summary><b>🎓 advisor-agent — 选导师前必看</b></summary>
+
+<br/>
+
+**选错导师毁三年。** 11 个平台（研控 · PI Review · 知乎 · 小红书 · RateMyProfessors · Reddit · GradCafe · PubPeer...）交叉验证，输出结构化尽职调查报告。
+
+```
+"查一下 MIT 的 XXX 教授"        → 完整报告
+"对比 A 教授和 B 教授"          → 对比分析
+"下周面试 XXX，帮我准备"        → 面试情报
 ```
 
-### 📦 Available Skills
+三个体量版本：完整版 49K（大模型）· 精简版 11K（中等模型）· 单文件 4K（本地小模型）
 
-| Skill | Description | Version |
-|-------|-------------|---------|
-| 🎓 [advisor-agent](skills/advisor-agent/) | Graduate advisor intelligence — academic strength, reputation, lab culture | v1 |
-| 🔒 [code-auditor](skills/code-auditor/) | White-box security audit — SQLi, XSS, RCE, SSRF, file upload | v1 |
-| ✈️ [travel-planner](skills/travel-planner/) | Travel planning expert — itinerary, budget, outfits, local tips | v1 |
+</details>
 
-### 🤝 Contributing
+<details>
+<summary><b>🔒 code-auditor — 人类级白盒审计</b></summary>
 
-We welcome all contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+<br/>
 
-**Skill ideas (help wanted):**
-- 📝 Paper Reader — Deep analysis of academic papers
-- 📊 Data Analyst — Auto EDA + visualization + reports
-- 💼 Resume Optimizer — Tailor resume to job descriptions
-- 🏠 Apartment Hunter — Rental research + neighborhood analysis
+不是 `grep 'eval('`。6 阶段流程：代码接入 → 全量理解 → 深度分析 → 对抗验证 → 报告 → 协作。聚焦 SQLi / XSS / RCE / SSRF / 文件上传，跨文件数据流追踪，输出可执行 PoC。
 
-### 📄 License
+</details>
 
-MIT License
+<details>
+<summary><b>✈️ travel-agent — 拿着手机就能走</b></summary>
+
+<br/>
+
+6 种模式（小白探索 / 拍照穿搭 / MBTI 定制 / 出境 / 地图生成...），酒店精确到门牌号 + 差评，出境三语 + 双币种 + 签证 + 租车，预算贴合度 90%-105%。
+
+</details>
+
+---
+
+## 💡 想要新 Skill？
+
+**开 [Issue](https://github.com/你的用户名/skill-hub/issues/new) 就行。哪怕一句 "要是有个 XX 就好了" 也够。**
+
+- 标题：`[Skill Request] 你想要什么`
+- 👍 投票越多，越优先实现
+- 想自己做？直接认领，PR 提过来
+
+每一条 Issue 我都会看。好的 Skill 都是从一个真实痛点开始的。
+
+---
+
+## 🤝 贡献
+
+```
+💡 提想法（Issue）· 🐛 报 Bug · ⭐ Star · 📢 转发 · 📝 提交 Skill（PR）
+```
+
+不会写代码也能贡献——**一个好需求比十个 demo 更有价值。**
+
+提交 Skill：`Fork → 参考 templates/skill-template.md → PR`　详见 [CONTRIBUTING.md](CONTRIBUTING.md)
+
+---
+
+<br/>
+<br/>
+
+<a name="english"></a>
+
+<div align="center">
+
+```
+   ███████╗██╗  ██╗██╗██╗     ██╗         ██╗  ██╗██╗   ██╗██████╗
+   ██╔════╝██║ ██╔╝██║██║     ██║         ██║  ██║██║   ██║██╔══██╗
+   ███████╗█████╔╝ ██║██║     ██║         ███████║██║   ██║██████╔╝
+   ╚════██║██╔═██╗ ██║██║     ██║         ██╔══██║██║   ██║██╔══██╗
+   ███████║██║  ██╗██║███████╗███████╗    ██║  ██║╚██████╔╝██████╔╝
+   ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝
+```
+
+**Plug-and-play skill packs for AI Agents.**
+
+</div>
+
+<br/>
+
+## What is a Skill?
+
+```
+Prompt = one-line instruction    →  "analyze this data"  →  AI rambles
+Skill  = a complete SOP manual   →  workflow + strategy + quality gates + error handling + structured output
+```
+
+**Copy-paste to install.** Zero deps. Zero config. Built for [OpenCode](https://opencode.ai). Works anywhere with system prompts (it's just Markdown).
+
+```bash
+git clone https://github.com/你的用户名/skill-hub.git
+cp skill-hub/agents/advisor-agent.md  ~/.config/opencode/agents/
+cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
+# Done. Open OpenCode. Talk normally.
+```
+
+---
+
+## Skill Catalog
+
+> `✅ Available` `🚧 WIP` `💡 Open — PRs welcome or 👍 upvote to prioritize`
+
+### 🔍 `research/` — Research & Intelligence
+
+| Status | Skill | Description | Highlights |
+|:---:|-------|-------------|------------|
+| ✅ | **[advisor-agent](skills/advisor-agent/)** | Grad advisor intelligence | 11 sources · 🔴🟡🟢 risk flags · Compare & interview prep |
+| 💡 | paper-reader | Academic paper deep-dive | Core contributions · Methodology · Limitations |
+| 💡 | market-analyst | Industry/product research | Competitive analysis · Market sizing · Trends |
+
+### 🛡️ `security/` — Security & Offense
+
+| Status | Skill | Description | Highlights |
+|:---:|-------|-------------|------------|
+| ✅ | **[code-auditor](skills/code-auditor/)** | White-box security audit | 6-stage pipeline · Cross-file tracing · Executable PoCs |
+| 💡 | vuln-scanner | Vulnerability scan & verify | Auto-scan · CVE matching · Fix suggestions |
+
+### ✈️ `lifestyle/` — Life & Planning
+
+| Status | Skill | Description | Highlights |
+|:---:|-------|-------------|------------|
+| ✅ | **[travel-agent](skills/travel-agent/)** | AI travel planner | 6 modes · Street-level picks · Trilingual · MBTI routes |
+| 💡 | meal-planner | Fridge → recipe suggestions | Ingredient matching · Nutrition · Difficulty tiers |
+| 💡 | fitness-coach | Custom training plans | Goal-based · Equipment-aware · Progressive overload |
+
+### 🔧 `devtools/` — Developer Tools
+
+| Status | Skill | Description | Highlights |
+|:---:|-------|-------------|------------|
+| 💡 | env-setup | One-click dev env for any repo | conda/venv/docker · GPU detection · Mirror fallback |
+| 💡 | data-analyst | Auto EDA + visualization | Data profiling · Anomaly detection · Insight reports |
+
+### 💼 `career/` — Career & Academia
+
+| Status | Skill | Description | Highlights |
+|:---:|-------|-------------|------------|
+| 💡 | resume-tailor | Tailor resume to JD | Line-by-line match · ATS-friendly · Quantification |
+| 💡 | mock-interview | Simulate tech interviews | Follow-ups · Scoring · Knowledge gap analysis |
+
+### 📰 `information/` — Information & Aggregation
+
+| Status | Skill | Description | Highlights |
+|:---:|-------|-------------|------------|
+| 💡 | news-digest | Multi-source daily news | Dedup · Summaries · Opinion contrast · Trends |
+| 💡 | apartment-hunter | Rental intelligence | Listing analysis · Neighborhood · Red flags |
+
+---
+
+## Live Skill Details
+
+<details>
+<summary><b>🎓 advisor-agent — Due diligence before choosing your advisor</b></summary>
+
+<br/>
+
+**Bad advisor = bad grad school.** Cross-references 11 platforms (PI Review · RateMyProfessors · Reddit · GradCafe · PubPeer...) into a structured due diligence report.
+
+```
+"Look up Professor XXX at MIT"       → Full report
+"Compare Professor A vs B"           → Side-by-side
+"Interview with XXX next week"       → Interview intel
+```
+
+Three sizes: Full 49K (frontier) · Compact 11K (mid-range) · Single-file 4K (local models)
+
+</details>
+
+<details>
+<summary><b>🔒 code-auditor — Human-level white-box audit</b></summary>
+
+<br/>
+
+Not `grep 'eval('`. 6-stage pipeline: intake → comprehension → deep analysis → adversarial verification → report → collaboration. Targets SQLi / XSS / RCE / SSRF / file upload. Cross-file data flow tracing. Executable PoCs.
+
+</details>
+
+<details>
+<summary><b>✈️ travel-agent — Follow your phone and go</b></summary>
+
+<br/>
+
+6 modes (explore / photo outfits / MBTI / international / map gen...). Street-level hotel picks with negative reviews. Trilingual + dual currency + visa + car rental for international trips. Budget accuracy 90%-105%.
+
+</details>
+
+---
+
+## 💡 Want a new Skill?
+
+**[Open an Issue](https://github.com/你的用户名/skill-hub/issues/new). Even "wish there was a XX" is enough.**
+
+- Title: `[Skill Request] What you want`
+- 👍 upvotes = priority
+- Want to build it yourself? Claim it and PR
+
+I read every Issue. Every great Skill starts with a real pain point.
+
+---
+
+## 🤝 Contributing
+
+```
+💡 Ideas (Issue) · 🐛 Bugs · ⭐ Star · 📢 Share · 📝 Submit a Skill (PR)
+```
+
+No code? No problem — **a great request is worth more than ten demos.**
+
+Submit a Skill: `Fork → Use templates/skill-template.md → PR`　See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
 <div align="center">
 
-**如果觉得有用，请给个 ⭐ Star — 这是对开源最好的支持！**
+<br/>
 
-**If you find this useful, please ⭐ Star — it means the world to open source!**
+⭐ **Star = 让更多人发现 · helps more people find this**
+
+💬 **[Open an Issue](https://github.com/你的用户名/skill-hub/issues/new) — 任何想法我都看 · I read them all**
+
+<br/>
+
+<sub>Built with obsession. Skills > Prompts.</sub>
 
 </div>
