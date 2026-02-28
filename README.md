@@ -17,7 +17,7 @@
 
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![PRs](https://img.shields.io/badge/PRs-welcome-FF6B6B?style=flat-square)](CONTRIBUTING.md)
-[![Idea?](https://img.shields.io/badge/💡_Idea%3F-Open_Issue-FFD93D?style=flat-square)](https://github.com/你的用户名/skill-hub/issues/new)
+[![Idea?](https://img.shields.io/badge/💡_Idea%3F-Open_Issue-FFD93D?style=flat-square)](https://github.com/Lirsakura/skill-hub/issues/new)
 
 **[中文](#中文)** · **[English](#english)**
 
@@ -37,7 +37,7 @@ Skill  = 一套完整的 SOP 手册  →  流程 + 策略 + 质量红线 + 错�
 **复制粘贴即装。** 零依赖，零配置。当前适配 [OpenCode](https://opencode.ai)，本质是 Markdown，任何支持 system prompt 的平台都能用。
 
 ```bash
-git clone https://github.com/你的用户名/skill-hub.git
+git clone https://github.com/Lirsakura/skill-hub.git
 cp skill-hub/agents/advisor-agent.md  ~/.config/opencode/agents/
 cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 # 完事。打开 OpenCode 说人话就行。
@@ -136,7 +136,7 @@ cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 
 ## 💡 想要新 Skill？
 
-**开 [Issue](https://github.com/你的用户名/skill-hub/issues/new) 就行。哪怕一句 "要是有个 XX 就好了" 也够。**
+**开 [Issue](https://github.com/Lirsakura/skill-hub/issues/new) 就行。哪怕一句 "要是有个 XX 就好了" 也够。**
 
 - 标题：`[Skill Request] 你想要什么`
 - 👍 投票越多，越优先实现
@@ -190,7 +190,7 @@ Skill  = a complete SOP manual   →  workflow + strategy + quality gates + erro
 **Copy-paste to install.** Zero deps. Zero config. Built for [OpenCode](https://opencode.ai). Works anywhere with system prompts (it's just Markdown).
 
 ```bash
-git clone https://github.com/你的用户名/skill-hub.git
+git clone https://github.com/Lirsakura/skill-hub.git
 cp skill-hub/agents/advisor-agent.md  ~/.config/opencode/agents/
 cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 # Done. Open OpenCode. Talk normally.
@@ -289,7 +289,7 @@ Not `grep 'eval('`. 6-stage pipeline: intake → comprehension → deep analysis
 
 ## 💡 Want a new Skill?
 
-**[Open an Issue](https://github.com/你的用户名/skill-hub/issues/new). Even "wish there was a XX" is enough.**
+**[Open an Issue](https://github.com/Lirsakura/skill-hub/issues/new). Even "wish there was a XX" is enough.**
 
 - Title: `[Skill Request] What you want`
 - 👍 upvotes = priority
@@ -317,7 +317,7 @@ Submit a Skill: `Fork → Use templates/skill-template.md → PR`　See [CONTRIB
 
 ⭐ **Star = 让更多人发现 · helps more people find this**
 
-💬 **[Open an Issue](https://github.com/你的用户名/skill-hub/issues/new) — 任何想法我都看 · I read them all**
+💬 **[Open an Issue](https://github.com/Lirsakura/skill-hub/issues/new) — 任何想法我都看 · I read them all**
 
 <br/>
 
