@@ -76,7 +76,8 @@ cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 
 | 状态 | Skill | 简介 | 亮点 |
 |:---:|-------|------|------|
-| 💡 | env-setup | GitHub 项目一键配环境 | conda/venv/docker · GPU 自检 · 镜像回退 |
+| ✅ | **[env-setup](skills/env-setup/)** | GitHub 项目一键配环境 | conda/venv/docker · GPU 自检 · 镜像回退 · 18 个子模块 |
+| ✅ | **[git-sync](skills/git-sync/)** | Git 仓库同步管理 | push/pull/sync-log · 冲突处理 · 日志追踪 |
 | 💡 | data-analyst | 自动 EDA + 可视化 | 数据画像 · 异常检测 · 洞察报告 |
 
 ### 💼 `career/` — 求职与学术
@@ -129,6 +130,30 @@ cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 <br/>
 
 6 种模式（小白探索 / 拍照穿搭 / MBTI 定制 / 出境 / 地图生成...），酒店精确到门牌号 + 差评，出境三语 + 双币种 + 签证 + 租车，预算贴合度 90%-105%。
+
+</details>
+
+<details>
+<summary><b>🔧 env-setup — 给个链接就能跑</b></summary>
+
+<br/>
+
+给一个 GitHub URL 或本地路径，自动识别技术栈（Python/Node/Java/Docker），搭建完整可运行环境。conda 优先，支持 GPU 自检、镜像回退、端口隔离。18 个子模块覆盖 app/db/helpers/scripts。
+
+```
+"帮我装一下 https://github.com/xxx/yyy"    → clone + 识别 + 搭建
+"当前目录的环境帮我装一下"                  → 就地搭建
+"找个 stable diffusion webui 装一下"       → 搜索 + 选择 + 搭建
+```
+
+</details>
+
+<details>
+<summary><b>🔄 git-sync — Git 操作不用记命令</b></summary>
+
+<br/>
+
+push / pull / sync-log 三个子 skill，处理日常 Git 同步。自动处理冲突、生成同步日志。
 
 </details>
 
@@ -229,7 +254,8 @@ cp -r skill-hub/skills/advisor-agent/ ~/.config/opencode/skills/
 
 | Status | Skill | Description | Highlights |
 |:---:|-------|-------------|------------|
-| 💡 | env-setup | One-click dev env for any repo | conda/venv/docker · GPU detection · Mirror fallback |
+| ✅ | **[env-setup](skills/env-setup/)** | One-click dev env for any repo | conda/venv/docker · GPU detection · Mirror fallback · 18 submodules |
+| ✅ | **[git-sync](skills/git-sync/)** | Git repo sync management | push/pull/sync-log · Conflict handling · Log tracking |
 | 💡 | data-analyst | Auto EDA + visualization | Data profiling · Anomaly detection · Insight reports |
 
 ### 💼 `career/` — Career & Academia
@@ -282,6 +308,24 @@ Not `grep 'eval('`. 6-stage pipeline: intake → comprehension → deep analysis
 <br/>
 
 6 modes (explore / photo outfits / MBTI / international / map gen...). Street-level hotel picks with negative reviews. Trilingual + dual currency + visa + car rental for international trips. Budget accuracy 90%-105%.
+
+</details>
+
+<details>
+<summary><b>🔧 env-setup — Give it a URL, get a running env</b></summary>
+
+<br/>
+
+Give a GitHub URL or local path, auto-detect tech stack (Python/Node/Java/Docker), build a complete runnable environment. Conda-first, GPU detection, mirror fallback, port isolation. 18 submodules covering app/db/helpers/scripts.
+
+</details>
+
+<details>
+<summary><b>🔄 git-sync — Git without remembering commands</b></summary>
+
+<br/>
+
+push / pull / sync-log sub-skills for everyday Git sync. Auto conflict handling and sync logging.
 
 </details>
 
