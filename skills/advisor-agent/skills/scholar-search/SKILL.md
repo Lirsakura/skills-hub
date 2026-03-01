@@ -102,36 +102,17 @@ WebFetch: https://api.semanticscholar.org/graph/v1/author/[authorId]/papers?fiel
    → 综述纳米农药的环境归趋与暴露模型
 ```
 
-## Step 5: 学术实力评级
+## Step 5: 学术实力概述
 
-```
-⭐⭐⭐⭐⭐ 领域大牛
-  - h-index 领域前 5%
-  - 顶会/顶刊常客
-  - 有高引代表作（>500 citations）
-  - 学术圈广泛认可
+**不打星级评分。** 以客观数据呈现学术实力，让用户自行判断。
 
-⭐⭐⭐⭐ 实力强劲
-  - h-index 领域前 20%
-  - 稳定在主流会议/期刊发表
-  - 有一定影响力的代表作
+需要在概述中包含：
+- 核心指标的数值（h-index、总引用、近3年产出等）
+- 与同领域、同职级的参考对比（如"该领域 Associate Prof 的 h-index 中位数约为 XX"）
+- 职业阶段说明（Assistant Prof 的产出不能和 Full Prof 直接比较）
+- 产出趋势（近年是上升、稳定还是下降）
 
-⭐⭐⭐ 中规中矩
-  - 正常发表节奏
-  - 在本领域有一定存在感
-  - 无特别突出亮点
-
-⭐⭐ 产出偏低
-  - 发表量低于同级别平均
-  - 近年活跃度下降
-  - 或刚起步的青年学者（需区分）
-
-⭐ 需要警惕
-  - 长期无产出
-  - 或方向过于冷门无法评估
-```
-
-**注意**：评级要考虑**职业阶段**。Assistant Prof 的 h-index 不能和 Full Prof 比，要和同阶段的人比。
+概述应为一段客观文字描述，呈现数据和背景信息，不做"强/弱/好/差"等主观判断。
 
 # 输出格式
 
@@ -145,8 +126,7 @@ WebFetch: https://api.semanticscholar.org/graph/v1/author/[authorId]/papers?fiel
   "recent_3yr_first_or_corresponding": 8,
   "top_venue_ratio": "60%",
   "annual_avg_papers": 5.2,
-  "rating": 4,
-  "rating_rationale": "评级理由...",
+  "academic_summary": "客观概述：含职业阶段、同领域参考对比、产出趋势",
   "top5_papers": [
     {
       "title": "...",
